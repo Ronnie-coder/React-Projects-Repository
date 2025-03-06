@@ -1,0 +1,101 @@
+.intro {
+  background: linear-gradient(to right, #f8f9fa, #f1f3f5); // Subtle gradient background
+  display: flex;
+  height: 100vh;
+  padding: 50px 100px;
+
+  .left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .imgContainer {
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #2c3e50, #34495e); // Professional gradient
+      border: 6px solid #f8f9fa;
+      box-shadow: 0 10px 20px rgba(44, 62, 80, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 12px 24px rgba(44, 62, 80, 0.2);
+      }
+
+      img {
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        object-fit: cover;
+        transition: all 0.3s ease-in-out;
+        filter: contrast(1.05);
+
+        &:hover {
+          filter: contrast(1.1);
+        }
+      }
+    }
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+      color: #2c3e50;
+      font-weight: bold;
+      letter-spacing: -0.5px; // Better typography
+    }
+
+    h2 {
+      font-size: 35px;
+      margin-bottom: 20px;
+      color: #34495e;
+      font-style: italic;
+      opacity: 0.9; // Subtle depth
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: #3498db;
+      font-weight: 500;
+      letter-spacing: 0.3px; // Better readability
+
+      span {
+        color: #2980b9;
+        font-weight: bold;
+        transition: color 0.3s ease; // Smooth color transition
+      }
+    }
+
+    a {
+      margin-top: 20px;
+      display: inline-block;
+      transition: all 0.3s ease-in-out;
+
+      img {
+        width: 50px;
+        height: 50px;
+        transition: all 0.3s ease-in-out;
+        filter: opacity(0.8); // Subtle effect
+
+        &:hover {
+          transform: translateY(5px);
+          filter: opacity(1);
+        }
+      }
+    }
+  }
+}
+
+// Keep your existing media<span class="ml-2" /><span class="inline-block w-3 h-3 rounded-full bg-neutral-a12 align-middle mb-[0.1rem]" />

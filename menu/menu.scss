@@ -1,0 +1,109 @@
+@import "../../global.scss";
+
+.menu {
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(145deg, #2c3e50, #34495e);
+    position: fixed;
+    top: 0;
+    right: -300px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: -5px 0 15px rgba(44, 62, 80, 0.15);
+    overflow: hidden;
+
+    &.active {
+        right: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 30px;
+        font-weight: 300;
+        color: #f8f9fa;
+        width: 60%;
+        overflow: visible;
+
+        li {
+            margin-bottom: 25px;
+            transform: translateX(0);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            overflow: visible;
+
+            a {
+                font-size: inherit;
+                color: inherit;
+                text-decoration: none;
+                position: relative;
+                padding: 5px 0;
+                display: block;
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: #3498db;
+                    transition: width 0.3s ease;
+                }
+
+                &:hover {
+                    color: #3498db;
+                    
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &:hover {
+                transform: translateX(10px);
+                font-weight: 400;
+            }
+
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i}) {
+                    transition-delay: $i * 0.1s;
+                }
+            }
+        }
+    }
+
+    &.active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(44, 62, 80, 0.5);
+        z-index: -1;
+        
+        @supports ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))) {
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+        }
+        
+        @supports not ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))) {
+            background: rgba(44, 62, 80, 0.8);
+        }
+    }
+}
+
+.menu.active {
+    ul {
+        li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}

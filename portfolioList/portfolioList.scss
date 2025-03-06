@@ -1,0 +1,57 @@
+// Import global variables and mixins
+@import "../../global.scss";
+
+// PortfolioList component styles
+.portfolioList {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px; // Changed to match the main portfolio.scss
+  cursor: pointer;
+  transition: all $transition-duration $transition-timing;
+  background: $accent-green; // Changed to match the main portfolio.scss
+  color: white; // Changed to match the main portfolio.scss
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  img {
+    width: 24px;
+    height: 24px; // Changed to match the main portfolio.scss
+    object-fit: cover;
+  }
+
+  span {
+    font-family: $font-primary;
+  }
+
+  &.active {
+    background: $accent-blue; // Changed to match the main portfolio.scss
+    transform: none; // Removed transform to match the main portfolio.scss
+    box-shadow: none; // Removed box-shadow to match the main portfolio.scss
+  }
+
+  &:hover:not(.active),
+  &.hovered:not(.active) {
+    background: $accent-green-dark; // Changed to match the main portfolio.scss
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $accent-blue;
+  }
+}
+
+// Responsive design
+@media screen and (max-width: 768px) {
+  .portfolioList {
+    padding: 8px 16px;
+    font-size: 14px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    gap: 8px;
+  }
+}

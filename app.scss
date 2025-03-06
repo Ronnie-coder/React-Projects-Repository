@@ -1,0 +1,30 @@
+.app {
+    height: 100vh;
+    width: 100%;
+    margin: 0;  // Reset any default margin
+    padding: 0;  // Reset any padding
+    overflow: hidden; // Prevent any unwanted scrolling
+
+    .sections {
+        width: 100%;
+        height: calc(100vh - 70px); // Changed from 70vh to 100vh
+        background-color: lightsalmon;
+        margin-top: 70px;
+        position: relative; // Add positioning context
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none; // for firefox
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        
+        >*{
+            width: 100vw;
+            height:calc(100vh - 70px);
+            scroll-snap-align: start;
+
+        }
+    }
+}

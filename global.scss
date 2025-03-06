@@ -1,0 +1,17 @@
+// Define color variables for easy maintenance and consistency
+$primary-dark: #2c3e50;
+$secondary-dark: #34495e;
+$accent-blue: #3498db;
+$accent-blue-dark: #2980b9;
+$light-bg: #f8f9fa;
+$light-bg-alt: #f1f3f5;
+$accent-green: #4CAF50; // Added for consistency with portfolioList.scss
+$accent-green-dark: #45a049; // Added for consistency with portfolioList.scss
+
+// Define font variables
+$font-primary: 'Roboto', sans-serif; // Updated to match the main portfolio.scss
+$font-secondary: 'Open Sans', sans-serif; // Updated to match the main portfolio.scss
+
+// Define transition variables
+$transition-duration: 0.3s;
+$transition-timing: ease-in-out;
